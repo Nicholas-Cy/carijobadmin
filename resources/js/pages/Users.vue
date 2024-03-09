@@ -85,7 +85,7 @@ export default {
 
       let search_parameter = (this.search != null) ? '&s=' + this.search : '';
       let filter_option = (this.filter != null) ? '&sort=' + this.filter : '';
-      let query = '/api/admin/users?page=' + page + '' + search_parameter + filter_option;
+      let query = '/api/admin/users?page=' + page + '' + search_parameter + filter_option;  //users
 
       Api.get(query)
         .then(response => {

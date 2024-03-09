@@ -9,8 +9,9 @@
         "cartalyst/stripe-laravel": "^14.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.36",
-        "laravel/sanctum": "^3.0",
+        "laravel/sanctum": "^3.3",
         "laravel/socialite": "^5.5",
+        "laravel/telescope": "^4.17",
         "laravel/tinker": "^2.7",
         "stripe/stripe-php": "^9.8"
     },
@@ -18,7 +19,6 @@
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
-        "laravel/telescope": "^4.16",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
@@ -54,7 +54,7 @@
     "extra": {
         "laravel": {
             "dont-discover": [
-                "laravel/telescope"
+                
             ]
         }
     },

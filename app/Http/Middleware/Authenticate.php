@@ -2,6 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
 class Authenticate extends Middleware
@@ -14,8 +17,9 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+        // dd("abc");
         if (! $request->expectsJson()) {
-            return route('dashboard');
+            return route('dashboard', ['any' => '']);
         }
     }
 }

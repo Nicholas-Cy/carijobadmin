@@ -40,11 +40,15 @@ class StatsRepository implements StatsRepositoryInterface
     public function dashboardConversionMetrics()
     {
         try {
+            
             $allApplicantsCount = JobApplication::all()->count();
             $shortlistedApplicantsCount = JobApplication::where('is_shortlisted', true)->count();
+            $shortlistPercentageDiff=0;
+            $applicantsPercentageValue=0;
+            if($allApplicantsCount!=0){
             $shortlistPercentageDiff = round(($shortlistedApplicantsCount / $allApplicantsCount) * 100);
             $applicantsPercentageValue = 100 - $shortlistPercentageDiff;
-
+            }
             return $this->responseData(['applicants' => $applicantsPercentageValue, 'shortlisted' => $shortlistPercentageDiff]);
         } catch (\Throwable $th) {
             return $this->responseError(['msg' => __("Couldn't retrieve conversion metrics, try again."), 'exception' => $th], 500);

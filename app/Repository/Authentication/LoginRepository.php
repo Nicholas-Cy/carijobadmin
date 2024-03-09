@@ -56,7 +56,7 @@ class LoginRepository implements LoginRepositoryInterface
     public function details(Request $request)
     {
         $user = $request->user();
-
+        //dd($user);
         return $this->responseData([
             'data' => new AdminResource($user),
         ]);
@@ -74,9 +74,9 @@ class LoginRepository implements LoginRepositoryInterface
         } else {
             $request->user()->tokens()->delete();
         }
-
         return $this->responseData([
             'message' => __('Admin logged out succesfully.'),
         ]);
+        
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\AdminMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,4 +38,5 @@ Route::post('/partner/reset-password', [\App\Http\Controllers\Partner\PartnerCon
 
 Route::get('/admin/{any}', function () {
     return view('dashboard');
-})->where('any', '.*');
+})->name('dashboard')->where('any', '.*');
+

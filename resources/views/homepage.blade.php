@@ -8,7 +8,7 @@
     <title>{{ env('APP_NAME') }}</title>
     <link rel="icon" 
       type="image/png" 
-      href="/img/icon.png">
+      href="/img/cari-jobs-icon.png">
     <script>
         window.Laravel = {
             csrfToken: '{{ csrf_token() }}'
@@ -20,7 +20,7 @@
 <body class="antialiased">
     <main
         class="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-emerald-400 to-green-600 background-animation">
-        <img src="/img/logo.png" class="w-40 mx-auto mb-8" alt="logo" />
+        <img src="/img/cari-jobs-logo.png" class="w-40 mx-auto mb-8" alt="logo" />
         <h1 class="text-4xl font-thin text-white">Welcome to the Admin Panel</h1>
         <a href="/admin/login"
             class="inline-block bg-gradient-to-br from-teal-300 to-teal-400 py-4 px-12 rounded-full text-lg text-white font-bold uppercase tracking-wide shadow-xs shadow-white hover:shadow-2xl active:shadow-xl transform hover:-translate-y-1 active:translate-y-0 transition duration-200 mt-8">Go

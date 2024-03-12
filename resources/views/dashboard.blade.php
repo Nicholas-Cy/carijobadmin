@@ -7,7 +7,7 @@
         <title>{{ env('APP_NAME') }}</title>
         <link rel="icon" 
           type="image/png" 
-          href="/img/icon.png">
+          href="/img/cari-jobs-icon.png">
         <script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
         @vite(['resources/js/app.js', 'resources/css/app.css'])
     </head>

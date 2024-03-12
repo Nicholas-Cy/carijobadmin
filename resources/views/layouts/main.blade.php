@@ -6,6 +6,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<title>{{ config('app.name', 'BeamCoda') }}</title>
+	<link rel="icon" type="image/png" href="../img/cari-jobs-icon.png">
 
 	@vite(['resources/css/app.css'])
 </head>

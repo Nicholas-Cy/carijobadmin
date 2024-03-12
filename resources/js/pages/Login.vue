@@ -13,7 +13,7 @@
       >
         <div class="cursor-pointer flex items-center">
           <div class="text-2xl text-teal-800 tracking-wide ml-2 font-semibold">
-            <img src="/img/logo.png" class="w-40 mx-auto mb-8" alt="logo" />
+            <img src="/img/cari-jobs-logo.png" class="w-40 mx-auto mb-8" alt="logo" />
           </div>
         </div>
       </div>

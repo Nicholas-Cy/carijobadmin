@@ -26,7 +26,7 @@
                     <tr>
                         <td style="text-align:center;">
                             <a href="{{ env('APP_URL') }}" title="logo" target="_blank">
-                                <img src="{{ env('APP_URL') }}/img/logo.png" style="max-width: 150px" alt="logo" />
+                                <img src="{{ env('APP_URL') }}/img/cari-jobs-logo.png" style="max-width: 150px" alt="logo" />
                             </a>
                         </td>
                     </tr>

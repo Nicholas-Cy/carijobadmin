@@ -3,7 +3,7 @@
 @section('content')
 <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
     <a href="/">
-        <img src="/img/logo.png" class="w-40 mx-auto mb-8" alt="logo" />
+        <img src="/img/cari-jobs-logo.png" class="w-40 mx-auto mb-8" alt="logo" />
     </a>
 
     <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">

@@ -8,7 +8,9 @@ use App\Models\Job;
 use App\Models\User;
 use App\Repository\API\V1\JobRepository;
 use Illuminate\Http\Request;
+use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
+#[OpenApi\PathItem]
 class JobController extends Controller
 {
     private JobRepository $jobRepository;
@@ -35,21 +37,37 @@ class JobController extends Controller
         return $this->jobRepository->store($request);
     }
 
+    /**
+     * Get all post
+     */
+    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
     public function allPosts()
     {
         return $this->jobRepository->allPosts();
     }
 
+    /**
+     * Get home page posts
+     */
+    #[OpenApi\Operation(tags: ['Job'], method: 'GET')]
     public function homePagePosts()
     {
         return $this->jobRepository->homePagePosts();
     }
 
+    /**
+     * Show a specific job
+     */
+    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
     public function show($id)
     {
         return $this->jobRepository->show($id);
     }
 
+    /**
+     * Delete a job
+     */
+    #[OpenApi\Operation(tags: ['Jobs'], method: 'DELETE')]
     public function destroy($id)
     {
         $job = Job::find($id);
@@ -57,6 +75,10 @@ class JobController extends Controller
         return $this->jobRepository->destroy($job);
     }
 
+    /**
+     * Get all jobs for a specific user
+     */
+    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
     public function jobUser(Request $request)
     {
         $job_id = $request->job_id;
@@ -65,6 +87,10 @@ class JobController extends Controller
         return $this->jobRepository->retrieveJobUser($job_id, $user);
     }
 
+    /**
+     * Toggle the status of the job
+     */
+    #[OpenApi\Operation(tags: ['Jobs'], method: 'PUT')]
     public function toggleJobStatus($id, $status)
     {
         $job = Job::find($id);

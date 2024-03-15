@@ -37,4 +37,9 @@ class SkillController extends Controller
     {
         return $this->skillRepository->destroy($skill);
     }
+
+    public function show()
+    {
+
+    }
 }

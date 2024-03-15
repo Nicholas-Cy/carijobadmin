@@ -35,4 +35,9 @@ class CategoryController extends Controller
     {
         return $this->categoryRepository->destroy($category);
     }
+
+    public function show()
+    {
+
+    }
 }

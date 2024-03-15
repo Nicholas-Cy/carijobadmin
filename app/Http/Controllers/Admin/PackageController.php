@@ -37,4 +37,9 @@ class PackageController extends Controller
     {
         return $this->packageRepository->destroy($package);
     }
+
+    public function show()
+    {
+        
+    }
 }

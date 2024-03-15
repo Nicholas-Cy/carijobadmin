@@ -45,4 +45,9 @@ class WebPageController extends Controller
 
         return $this->webPageRepository->destroy($webPage);
     }
+
+    public function store()
+    {
+        
+    }
 }

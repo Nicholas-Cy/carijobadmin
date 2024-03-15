@@ -39,4 +39,9 @@ class PostDurationController extends Controller
 
         return $this->postdurationRepository->destroy($postduration);
     }
+
+    public function show()
+    {
+        
+    }
 }

@@ -42,4 +42,9 @@ class UserController extends Controller
     {
         return $this->userRepository->destroy($user);
     }
+
+    public function show()
+    {
+        
+    }
 }

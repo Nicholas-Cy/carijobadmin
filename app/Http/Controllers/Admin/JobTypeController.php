@@ -37,4 +37,9 @@ class JobTypeController extends Controller
     {
         return $this->jobtypeRepository->destroy($jobType);
     }
+
+    public function show()
+    {
+
+    }
 }

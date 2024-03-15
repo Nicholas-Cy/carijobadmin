@@ -197,7 +197,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
-
+        Vyuldashev\LaravelOpenApi\OpenApiServiceProvider::class,
+        
     ],
 
     /*

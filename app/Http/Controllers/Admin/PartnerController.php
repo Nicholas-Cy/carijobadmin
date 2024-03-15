@@ -38,4 +38,9 @@ class PartnerController extends Controller
     {
         return $this->partnerRepository->destroy($partner);
     }
+
+    public function show()
+    {
+
+    }
 }

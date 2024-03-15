@@ -28,4 +28,24 @@ class InvoiceController extends Controller
     {
         return $this->invoiceRepository->partnerInvoices($id);
     }
+
+    public function store()
+    {
+
+    }
+
+    public function show()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+        
+    }
 }

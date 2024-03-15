@@ -37,4 +37,9 @@ class FeatureController extends Controller
     {
         return $this->featureRepository->destroy($feature);
     }
+
+    public function show() 
+    {
+        
+    }
 }

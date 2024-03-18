@@ -18,6 +18,8 @@ class BlogPostController extends Controller
 
     /** 
      * List all blog post
+     * 
+     * List all blog posts from the database
      */ 
     #[OpenApi\Operation(tags: ['Blog Posts'], method: 'GET')]
     public function index()
@@ -27,6 +29,8 @@ class BlogPostController extends Controller
 
     /** 
      * Show a specific blog post
+     * 
+     * Show a specific blog post from the database
      */
     #[OpenApi\Operation( tags: ['Blog Posts'], method: 'GET')]
     public function show($id)
@@ -36,6 +40,8 @@ class BlogPostController extends Controller
 
     /** 
      * List featured blog posts
+     * 
+     * List featured blog posts from the database
      */
     #[OpenApi\Operation( tags: ['Blog Posts'], method: 'GET')]
     public function featuredArticles()

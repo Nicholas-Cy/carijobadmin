@@ -23,6 +23,8 @@ class NotificationDeviceController extends Controller
 
     /**
      * Retrieve device for a specific user
+     * 
+     * Retrieve device for a specific user from the database
      */
     #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'GET')]
     public function retrieveUserDevices(Request $request)
@@ -34,6 +36,8 @@ class NotificationDeviceController extends Controller
 
     /**
      * Retrieve device for a specific partner
+     * 
+     * Retrieve device for a specific partner from the database
      */
     #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'GET')]
     public function retrievePartnerDevices(Request $request)
@@ -45,6 +49,8 @@ class NotificationDeviceController extends Controller
 
     /**
      * Save a user's device
+     * 
+     * Save a user's device to the database
      */
     #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'POST')]
     public function saveUserDevice(UserNotificationDeviceRequest $request)
@@ -54,6 +60,8 @@ class NotificationDeviceController extends Controller
 
     /**
      * Save a partner's device
+     * 
+     * Save a partner's device to the database
      */
     #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'POST')]
     public function savePartnerDevice(PartnerNotificationDeviceRequest $request)

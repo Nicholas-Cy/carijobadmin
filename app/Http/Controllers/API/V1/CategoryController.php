@@ -19,6 +19,8 @@ class CategoryController extends Controller
 
     /** 
      * List all categories
+     * 
+     * List all categories from the database
      */
     #[OpenApi\Operation(tags: ['Category'], method: 'GET')]
     public function index()
@@ -28,6 +30,8 @@ class CategoryController extends Controller
 
     /** 
      * Get jobs in a specific category
+     * 
+     * Get all jobs in a specific category
      */
     #[OpenApi\Operation(tags: ['Category'], method: 'GET')]
     public function getJobsInCategory($id)

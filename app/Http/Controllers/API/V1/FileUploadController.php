@@ -20,6 +20,8 @@ class FileUploadController extends Controller
 
     /** 
      * Upload an image
+     * 
+     * Upload an image to the server
      */
     #[OpenApi\Operation(tags: ['File Upload'], method: 'POST')]
     public function uploadImage(ImageUploadRequest $request)
@@ -29,6 +31,8 @@ class FileUploadController extends Controller
 
     /** 
      * Upload a document
+     * 
+     * Upload a document to the server
      */
     #[OpenApi\Operation(tags: ['File Upload'], method: 'POST')]
     public function uploadDoc(DocUploadRequest $request)

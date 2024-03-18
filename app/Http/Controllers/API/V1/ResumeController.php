@@ -20,6 +20,8 @@ class ResumeController extends Controller
 
     /**
      * Save user resumes
+     * 
+     * Save user resumes to the database
      */
     #[OpenApi\Operation(tags: ['Resume'], method: 'POST')]
     public function store(ResumeRequest $request)
@@ -29,6 +31,8 @@ class ResumeController extends Controller
 
     /**
      * Delete user resumes
+     * 
+     * Delete user resumes from the database
      */
     #[OpenApi\Operation(tags: ['Resume'], method: 'DELETE')]
     public function destroy($id)
@@ -40,6 +44,8 @@ class ResumeController extends Controller
 
     /**
      * Get a user resume
+     * 
+     * Get a user resume from the database
      */
     #[OpenApi\Operation(tags: ['Resume'], method: 'GET')]
     public function userResumes($id)

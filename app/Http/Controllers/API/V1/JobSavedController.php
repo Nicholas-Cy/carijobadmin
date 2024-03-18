@@ -22,10 +22,6 @@ class JobSavedController extends Controller
         $this->jobSavedRepository = $jobSavedRepository;
     }
 
-    /**
-     * Indexing
-     */
-    #[OpenApi\Operation(tags: ['JobSaved'], method: 'GET')]
     public function index()
     {
 
@@ -33,6 +29,8 @@ class JobSavedController extends Controller
 
     /**
      * Show saved jobs for a specific user
+     * 
+     * Get all saved jobs for a specific user
      */
     #[OpenApi\Operation(tags: ['JobSaved'], method: 'GET')]
     public function show($id)
@@ -44,6 +42,8 @@ class JobSavedController extends Controller
 
     /**
      * Store a saved job
+     * 
+     * Save a job to the database
      */
     #[OpenApi\Operation(tags: ['JobSaved'], method: 'POST')]
     public function store(JobSavedRequest $request)
@@ -53,6 +53,8 @@ class JobSavedController extends Controller
 
     /**
      * Delete a saved job
+     * 
+     * Delete a saved job from the database
      */
     #[OpenApi\Operation(tags: ['JobSaved'], method: 'DELETE')]
     public function destroy($user, $id)

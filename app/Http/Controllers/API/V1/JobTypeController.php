@@ -18,6 +18,8 @@ class JobTypeController extends Controller
 
     /**
      * Get all job types
+     * 
+     * Get all job types from the database
      */
     #[OpenApi\Operation(tags: ['JobType'], method: 'GET')]
     public function index()

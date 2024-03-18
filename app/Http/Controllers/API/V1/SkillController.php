@@ -20,6 +20,8 @@ class SkillController extends Controller
 
     /**
      *  Get all skills
+     * 
+     *  Get all skills from the database
      */
     #[OpenApi\Operation(tags: ['Skill'], method: 'GET')]
     public function index()
@@ -29,6 +31,8 @@ class SkillController extends Controller
 
     /**
      * Get hintable skills
+     * 
+     * Get all skills that can be hinted
      */
     #[OpenApi\Operation(tags: ['Skill'], method: 'GET')]
     public function hintableSkills()
@@ -38,6 +42,8 @@ class SkillController extends Controller
 
     /**
      * Get user skills
+     * 
+     * Get all skills of a user
      */
     #[OpenApi\Operation(tags: ['Skill'], method: 'GET')]
     public function userSkills($id)
@@ -47,6 +53,8 @@ class SkillController extends Controller
 
     /**
      * Add skills to user
+     * 
+     * Add skills to a user
      */
     #[OpenApi\Operation(tags: ['Skill'], method: 'POST')]
     public function addSkillsToUser($id, Request $request)

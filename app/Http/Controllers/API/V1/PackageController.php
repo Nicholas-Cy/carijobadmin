@@ -18,6 +18,8 @@ class PackageController extends Controller
 
     /**
      * Get all packages
+     * 
+     * Get all packages from the database
      */
     #[OpenApi\Operation(tags: ['Package'], method: 'GET')]
     public function index()

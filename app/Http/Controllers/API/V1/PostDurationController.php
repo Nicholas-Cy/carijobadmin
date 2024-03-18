@@ -18,6 +18,8 @@ class PostDurationController extends Controller
 
     /**
      * Get all post durations
+     * 
+     * Get all post durations from the database
      */
     #[OpenApi\Operation(tags: ['PostDuration'], method: 'GET')]
     public function index()
@@ -27,6 +29,8 @@ class PostDurationController extends Controller
 
     /**
      * Get post duration for partners
+     * 
+     * Get post duration for partners from the database
      */
     #[OpenApi\Operation(tags: ['PostDuration'], method: 'GET')]
     public function listForPartners($id)

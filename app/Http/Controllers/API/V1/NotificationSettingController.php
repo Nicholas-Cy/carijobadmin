@@ -23,6 +23,8 @@ class NotificationSettingController extends Controller
 
     /**
      * Retrieve settings for a specific user
+     * 
+     * Retrieve settings for a specific user from the database
      */
     #[OpenApi\Operation(tags: ['NotificationSetting'], method: 'GET')]
     public function retrieveUser(Request $request)
@@ -34,6 +36,8 @@ class NotificationSettingController extends Controller
 
     /**
      * Retrieve settings for a specific partner
+     * 
+     * Retrieve settings for a specific partner from the database
      */
     #[OpenApi\Operation(tags: ['NotificationSetting'], method: 'GET')]
     public function retrievePartner(Request $request)
@@ -45,6 +49,8 @@ class NotificationSettingController extends Controller
 
     /**
      * Save a specific user notification settings
+     * 
+     * Save a specific user notification settings to the database
      */
     #[OpenApi\Operation(tags: ['NotificationSetting'], method: 'POST')]
     public function saveSettingUser(UserNotificationSettingRequest $request)
@@ -53,7 +59,9 @@ class NotificationSettingController extends Controller
     }
 
     /**
-     * Save a specific parner notification settings
+     * Save a specific partner notification settings
+     * 
+     * Save a specific partner notification settings to the database
      */
     #[OpenApi\Operation(tags: ['NotificationSetting'], method: 'POST')]
     public function saveSettingPartner(PartnerNotificationSettingRequest $request)

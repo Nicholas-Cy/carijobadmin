@@ -14,12 +14,18 @@ class InvoiceController extends Controller
     {
         $this->invoiceRepository = $invoiceRepository;
     }
-
+    
+    /**
+     * Create a new invoice
+     */
     public function createInvoice(InvoiceRequest $invoice)
     {
         return $this->invoiceRepository->createInvoice($invoice);
     }
 
+    /**
+     * Update an existing invoice
+     */
     public function updateInvoice($invoicePaid)
     {
         return $this->invoiceRepository->invoicePaid($invoicePaid);

@@ -18,8 +18,6 @@ class InvoiceController extends Controller
 
     /**
      * Get all invoices
-     * 
-     * Get all invoices from the database
      */
     #[OpenApi\Operation(tags: ['Invoices'], method: 'GET')]
     public function index()
@@ -29,8 +27,6 @@ class InvoiceController extends Controller
 
     /**
      * Get all paid invoices
-     * 
-     * Get all paid invoices from the database
      */
     #[OpenApi\Operation(tags: ['Invoices'], method: 'GET')]
     public function paidInvoiceStats()
@@ -40,8 +36,6 @@ class InvoiceController extends Controller
 
     /**
      * Get all partner invoices
-     * 
-     * Get all partner invoices from the database
      */
     #[OpenApi\Operation(tags: ['Invoices'], method: 'GET')]
     public function partnerInvoices($id)
@@ -59,6 +53,9 @@ class InvoiceController extends Controller
 
     }
 
+    /**
+     * Update an existing invoice
+     */
     public function update()
     {
 

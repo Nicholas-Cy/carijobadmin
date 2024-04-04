@@ -134,7 +134,7 @@ export default {
     return {
       invoices: {},
       tableHeaders: [
-        { name: "Parner", value: "partner" },
+        { name: "Partner", value: "partner" },
         { name: "Package", value: "package" },
         {
           name: "Paid",

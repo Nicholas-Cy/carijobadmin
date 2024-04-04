@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Repository\API\V1\Dashboard\StatsRepository;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
+
+
 class DashboardController extends Controller
 {
     private StatsRepository $statsRepository;
@@ -21,7 +21,7 @@ class DashboardController extends Controller
      * 
      * Get all insights from the database
      */
-    #[OpenApi\Operation(tags: ['Dashboard'], method: 'GET')]
+    
     public function insights()
     {
         return $this->statsRepository->dashboardInsightsStats();
@@ -32,7 +32,7 @@ class DashboardController extends Controller
      * 
      * Get the conversion metrics from the database
      */
-    #[OpenApi\Operation(tags: ['Dashboard'], method: 'GET')]
+    
     public function conversionMetrics()
     {
         return $this->statsRepository->dashboardConversionMetrics();

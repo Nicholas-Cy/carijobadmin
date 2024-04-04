@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PackageRequest;
 use App\Models\Package;
 use App\Repository\API\V1\PackageRepository;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class PackageController extends Controller
 {
     private PackageRepository $packageRepository;
@@ -23,7 +21,7 @@ class PackageController extends Controller
      * 
      * Get all packages from the database
      */
-    #[OpenApi\Operation(tags: ['Packages'], method: 'GET')]
+    
     public function index()
     {
         return $this->packageRepository->index();
@@ -34,7 +32,7 @@ class PackageController extends Controller
      * 
      * Save the packages to the database
      */
-    #[OpenApi\Operation(tags: ['Packages'], method: 'POST')]
+    
     public function store(PackageRequest $request)
     {
         return $this->packageRepository->store($request);
@@ -45,7 +43,7 @@ class PackageController extends Controller
      * 
      * Update the packages in the database
      */
-    #[OpenApi\Operation(tags: ['Packages'], method: 'PUT')]
+    
     public function update(PackageRequest $request, $id)
     {
         $package = Package::find($id);
@@ -58,7 +56,7 @@ class PackageController extends Controller
      * 
      * Delete the packages from the database
      */
-    #[OpenApi\Operation(tags: ['Packages'], method: 'DELETE')]
+    
     public function destroy(Package $package)
     {
         return $this->packageRepository->destroy($package);

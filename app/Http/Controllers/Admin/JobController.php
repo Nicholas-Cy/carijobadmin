@@ -9,9 +9,7 @@ use App\Models\Job;
 use App\Models\Partner;
 use App\Repository\API\V1\JobRepository;
 use Illuminate\Http\Request;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class JobController extends Controller
 {
     private JobRepository $jobRepository;
@@ -26,7 +24,7 @@ class JobController extends Controller
      * 
      *  Get all jobs from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function index()
     {
         return $this->jobRepository->index();
@@ -37,7 +35,7 @@ class JobController extends Controller
      * 
      * Save a job in the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'POST')]
+    
     public function store(JobRequest $request)
     {
         return $this->jobRepository->store($request);
@@ -48,7 +46,7 @@ class JobController extends Controller
      * 
      * Show the job from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function show($id)
     {
         return $this->jobRepository->show($id);
@@ -59,7 +57,7 @@ class JobController extends Controller
      * 
      * Update the job in the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'PUT')]
+    
     public function update(JobRequest $request, $id)
     {
         $job = Job::find($id);
@@ -72,7 +70,7 @@ class JobController extends Controller
      * 
      * Delete the job from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'DELETE')]
+    
     public function destroy(Job $job)
     {
         return $this->jobRepository->destroy($job);
@@ -83,7 +81,7 @@ class JobController extends Controller
      * 
      * Get all jobs for a partner from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function listJobsPartner(Request $request)
     {
         $partner = Partner::find($request->partner_id);
@@ -96,7 +94,7 @@ class JobController extends Controller
      * 
      * Get all jobs for a category from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function listJobsCategory(Request $request)
     {
         $category = Category::find($request->category_id);
@@ -109,7 +107,7 @@ class JobController extends Controller
      * 
      * Get all applicants for a job from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function listJobsApplicants($id)
     {
         return $this->jobRepository->retrieveJobApplicants($id);
@@ -120,7 +118,7 @@ class JobController extends Controller
      * 
      * Show jobs statistic to the dashboard
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function stats()
     {
         return $this->jobRepository->jobStats();

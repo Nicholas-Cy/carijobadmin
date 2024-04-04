@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\JobTypeRequest;
 use App\Models\JobType;
 use App\Repository\API\V1\JobTypeRepository;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class JobTypeController extends Controller
 {
     private JobTypeRepository $jobtypeRepository;
@@ -23,7 +21,7 @@ class JobTypeController extends Controller
      * 
      * Get all job types from the database
      */
-    #[OpenApi\Operation(tags: ['Job Types'], method: 'GET')]
+    
     public function index()
     {
         return $this->jobtypeRepository->index();
@@ -34,7 +32,7 @@ class JobTypeController extends Controller
      * 
      * Save a job type to the database
      */
-    #[OpenApi\Operation(tags: ['Job Types'], method: 'POST')]
+    
     public function store(JobTypeRequest $request)
     {
         return $this->jobtypeRepository->store($request);
@@ -45,7 +43,7 @@ class JobTypeController extends Controller
      * 
      * Update a job type in the database
      */
-    #[OpenApi\Operation(tags: ['Job Types'], method: 'PUT')]
+    
     public function update(JobTypeRequest $request, $id)
     {
         $jobtype = JobType::find($id);
@@ -58,7 +56,7 @@ class JobTypeController extends Controller
      * 
      * Delete a job type from the database
      */
-    #[OpenApi\Operation(tags: ['Job Types'], method: 'DELETE')]
+    
     public function destroy(JobType $jobType)
     {
         return $this->jobtypeRepository->destroy($jobType);

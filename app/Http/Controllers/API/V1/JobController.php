@@ -8,9 +8,7 @@ use App\Models\Job;
 use App\Models\User;
 use App\Repository\API\V1\JobRepository;
 use Illuminate\Http\Request;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class JobController extends Controller
 {
     private JobRepository $jobRepository;
@@ -25,7 +23,7 @@ class JobController extends Controller
      * 
      * Get all jobs from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function index()
     {
         return $this->jobRepository->index();
@@ -36,7 +34,7 @@ class JobController extends Controller
      * 
      * Update a job in the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'PUT')]
+    
     public function update(JobRequest $request, $id)
     {
         $job = Job::find($id);
@@ -49,7 +47,7 @@ class JobController extends Controller
      * 
      * Save a job to the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'POST')]
+    
     public function store(JobRequest $request)
     {
         return $this->jobRepository->store($request);
@@ -60,7 +58,7 @@ class JobController extends Controller
      * 
      * Get all posted jobs from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function allPosts()
     {
         return $this->jobRepository->allPosts();
@@ -71,8 +69,7 @@ class JobController extends Controller
      * 
      * Get all home page posts from the database
      */
-    #[OpenApi\Operation(tags: ['Job'], method: 'GET')]
-    public function homePagePosts()
+        public function homePagePosts()
     {
         return $this->jobRepository->homePagePosts();
     }
@@ -82,7 +79,7 @@ class JobController extends Controller
      * 
      * Get a specific job from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function show($id)
     {
         return $this->jobRepository->show($id);
@@ -93,7 +90,7 @@ class JobController extends Controller
      * 
      * Delete a job from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'DELETE')]
+    
     public function destroy($id)
     {
         $job = Job::find($id);
@@ -106,7 +103,7 @@ class JobController extends Controller
      * 
      * Get all jobs for a specific user from the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'GET')]
+    
     public function jobUser(Request $request)
     {
         $job_id = $request->job_id;
@@ -120,7 +117,7 @@ class JobController extends Controller
      * 
      * Toggle the status of the job in the database
      */
-    #[OpenApi\Operation(tags: ['Jobs'], method: 'PUT')]
+    
     public function toggleJobStatus($id, $status)
     {
         $job = Job::find($id);

@@ -7,9 +7,7 @@ use App\Http\Requests\BlogPostRequest;
 use App\Models\BlogPost;
 use App\Repository\API\V1\BlogPostRepository;
 use Illuminate\Http\Request;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class BlogPostController extends Controller
 {
     private BlogPostRepository $blogPostRepository;
@@ -24,7 +22,6 @@ class BlogPostController extends Controller
      * 
      * Get all blog posts from the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'GET')]
     public function index()
     {
         return $this->blogPostRepository->index();
@@ -35,7 +32,7 @@ class BlogPostController extends Controller
      * 
      * Save a blog post to the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'POST')]
+
     public function store(BlogPostRequest $request)
     {
         return $this->blogPostRepository->store($request);
@@ -46,7 +43,7 @@ class BlogPostController extends Controller
      * 
      * Update the blog post in the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'PUT')]
+
     public function update(BlogPostRequest $request, $id)
     {
         $blogPost = BlogPost::find($id);
@@ -59,7 +56,7 @@ class BlogPostController extends Controller
      * 
      * Toggle the published status of a blog post in the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'POST')]
+
     public function togglePublishedStatus($id)
     {
         $blogPost = BlogPost::find($id);
@@ -72,7 +69,6 @@ class BlogPostController extends Controller
      * 
      * Get a blog post from the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'GET')]
     public function show($id)
     {
         return $this->blogPostRepository->show($id);
@@ -83,7 +79,7 @@ class BlogPostController extends Controller
      * 
      * Delete a blog post from the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'DELETE')]
+
     public function destroy(Request $request)
     {
         $blogPost = BlogPost::find($request->id);
@@ -96,7 +92,6 @@ class BlogPostController extends Controller
      * 
      * Get featured articles from the database
      */
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'GET')]
     public function featuredArticles()
     {
         return $this->blogPostRepository->featuredArticles();

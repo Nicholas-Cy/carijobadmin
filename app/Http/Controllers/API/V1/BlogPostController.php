@@ -4,9 +4,7 @@ namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
 use App\Repository\API\V1\BlogPostRepository;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class BlogPostController extends Controller
 {
     private BlogPostRepository $blogPostRepository;
@@ -21,7 +19,7 @@ class BlogPostController extends Controller
      * 
      * List all blog posts from the database
      */ 
-    #[OpenApi\Operation(tags: ['Blog Posts'], method: 'GET')]
+    
     public function index()
     {
         return $this->blogPostRepository->web_index();
@@ -32,7 +30,7 @@ class BlogPostController extends Controller
      * 
      * Show a specific blog post from the database
      */
-    #[OpenApi\Operation( tags: ['Blog Posts'], method: 'GET')]
+    
     public function show($id)
     {
         return $this->blogPostRepository->show($id);
@@ -43,7 +41,7 @@ class BlogPostController extends Controller
      * 
      * List featured blog posts from the database
      */
-    #[OpenApi\Operation( tags: ['Blog Posts'], method: 'GET')]
+    
     public function featuredArticles()
     {
         return $this->blogPostRepository->featuredArticles();

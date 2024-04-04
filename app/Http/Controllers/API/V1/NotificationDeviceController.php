@@ -9,9 +9,7 @@ use App\Models\Partner;
 use App\Models\User;
 use App\Repository\API\V1\Notifications\NotificationDeviceRepository;
 use Illuminate\Http\Request;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class NotificationDeviceController extends Controller
 {
     private NotificationDeviceRepository $notificationDeviceRepository;
@@ -26,7 +24,7 @@ class NotificationDeviceController extends Controller
      * 
      * Retrieve device for a specific user from the database
      */
-    #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'GET')]
+    
     public function retrieveUserDevices(Request $request)
     {
         $user = User::find($request->user_id);
@@ -39,7 +37,7 @@ class NotificationDeviceController extends Controller
      * 
      * Retrieve device for a specific partner from the database
      */
-    #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'GET')]
+    
     public function retrievePartnerDevices(Request $request)
     {
         $partner = Partner::find($request->partner_id);
@@ -52,7 +50,7 @@ class NotificationDeviceController extends Controller
      * 
      * Save a user's device to the database
      */
-    #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'POST')]
+    
     public function saveUserDevice(UserNotificationDeviceRequest $request)
     {
         return $this->notificationDeviceRepository->saveUserDevice($request);
@@ -63,7 +61,7 @@ class NotificationDeviceController extends Controller
      * 
      * Save a partner's device to the database
      */
-    #[OpenApi\Operation(tags: ['NotificationDevice'], method: 'POST')]
+    
     public function savePartnerDevice(PartnerNotificationDeviceRequest $request)
     {
         return $this->notificationDeviceRepository->savePartnerDevice($request);

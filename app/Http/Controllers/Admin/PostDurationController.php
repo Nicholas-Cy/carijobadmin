@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PostDurationRequest;
 use App\Models\PostDuration;
 use App\Repository\API\V1\PostDurationRepository;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class PostDurationController extends Controller
 {
     private PostDurationRepository $postdurationRepository;
@@ -23,7 +21,7 @@ class PostDurationController extends Controller
      * 
      * Get all post durations from the database
      */
-    #[OpenApi\Operation(tags: ['PostDuration'], method: 'GET')]
+    
     public function index()
     {
         return $this->postdurationRepository->index();
@@ -34,7 +32,7 @@ class PostDurationController extends Controller
      * 
      * Save post duration to the database
      */
-    #[OpenApi\Operation(tags: ['PostDuration'], method: 'POST')]
+    
     public function store(PostDurationRequest $request)
     {
         return $this->postdurationRepository->store($request);
@@ -45,7 +43,7 @@ class PostDurationController extends Controller
      * 
      * Update post duration in the database
      */
-    #[OpenApi\Operation(tags: ['PostDuration'], method: 'PUT')]
+    
     public function update(PostDurationRequest $request, $id)
     {
         $postduration = PostDuration::find($id);
@@ -58,7 +56,7 @@ class PostDurationController extends Controller
      * 
      * Delete post duration from the database
      */
-    #[OpenApi\Operation(tags: ['PostDuration'], method: 'DELETE')]
+    
     public function destroy($id)
     {
         $postduration = PostDuration::find($id);
@@ -71,7 +69,7 @@ class PostDurationController extends Controller
      * 
      * Show post duration to the dashboard
      */
-    #[OpenApi\Operation(tags: ['PostDuration'], method: 'GET')]
+    
     public function show()
     {
         

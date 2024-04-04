@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SkillRequest;
 use App\Models\Skill;
 use App\Repository\API\V1\SkillRepository;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class SkillController extends Controller
 {
     private SkillRepository $skillRepository;
@@ -23,7 +21,7 @@ class SkillController extends Controller
      * 
      * Get all skills from the database
      */
-    #[OpenApi\Operation(tags: ['Skill'], method: 'GET')]
+    
     public function index()
     {
         return $this->skillRepository->index();
@@ -34,7 +32,7 @@ class SkillController extends Controller
      * 
      * Store a skills in the database
      */
-    #[OpenApi\Operation(tags: ['Skill'], method: 'POST')]
+    
     public function store(SkillRequest $request)
     {
         return $this->skillRepository->store($request);
@@ -45,7 +43,7 @@ class SkillController extends Controller
      * 
      * Update the skills in the database
      */
-    #[OpenApi\Operation(tags: ['Skill'], method: 'PUT')]
+    
     public function update(SkillRequest $request, $id)
     {
         $skill = Skill::find($id);
@@ -58,7 +56,7 @@ class SkillController extends Controller
      * 
      * Delete the skills from the database
      */
-    #[OpenApi\Operation(tags: ['Skill'], method: 'DELETE')]
+    
     public function destroy(Skill $skill)
     {
         return $this->skillRepository->destroy($skill);
@@ -69,7 +67,7 @@ class SkillController extends Controller
      * 
      * Show the skills from the database
      */
-    #[OpenApi\Operation(tags: ['Skill'], method: 'GET')]
+    
     public function show()
     {
 

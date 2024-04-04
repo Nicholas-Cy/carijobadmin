@@ -8,9 +8,7 @@ use App\Models\JobSaved;
 use App\Models\User;
 use App\Repository\API\V1\JobSavedRepository;
 use App\Utils\Response;
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
 
-#[OpenApi\PathItem]
 class JobSavedController extends Controller
 {
     use Response;
@@ -32,7 +30,7 @@ class JobSavedController extends Controller
      * 
      * Get all saved jobs for a specific user
      */
-    #[OpenApi\Operation(tags: ['JobSaved'], method: 'GET')]
+    
     public function show($id)
     {
         $user = User::find($id);
@@ -45,7 +43,7 @@ class JobSavedController extends Controller
      * 
      * Save a job to the database
      */
-    #[OpenApi\Operation(tags: ['JobSaved'], method: 'POST')]
+    
     public function store(JobSavedRequest $request)
     {
         return $this->jobSavedRepository->store($request);
@@ -56,7 +54,7 @@ class JobSavedController extends Controller
      * 
      * Delete a saved job from the database
      */
-    #[OpenApi\Operation(tags: ['JobSaved'], method: 'DELETE')]
+    
     public function destroy($user, $id)
     {
         $jobSavedExists = JobSaved::where('user_id', $user)->where('job_id', $id)->exists();
